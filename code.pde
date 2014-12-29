@@ -67,40 +67,72 @@ void draw(){
   if (siegetime == 1) {background(30,0,0);} else {background(0,30,0);};
   
   textSize(30);
-  stroke(255,255,255); fill(255,255,255);strokeWeight(10);
-  if (wallsieged == 0 && siegetime == 1) {stroke(255,155,0);fill(255,155,0);};
-  if (wallhp[0] < 40) {stroke(255,0,0);fill(255,0,0);};
-  if (wallhp[0] > 0) {line(300,170,100,400);};
-  text(wallhp[0],110,285);
-  textSize(15);
-  text("Kitchen",200,325);
+  fill(255,255,0);
+  rotate(-0.85);
+  text(wallhp[0] + " HP",-100,275);
+  rotate(0.85);
+  stroke(230,230,230); fill(255,255,255);strokeWeight(10);
+  if (wallsieged == 0 && siegetime == 1) {stroke(230,130,0);fill(255,155,0);};
+  if (wallhp[0] < 40) {stroke(230,0,0);fill(255,0,0);};
+  if (wallhp[0] > 0) {
+    line(350,50,50,380);
+    line(350,60,50,390);
+    line(350,70,50,400);
+    line(350,80,50,410);
+    line(350,90,50,420);
+    line(350,100,50,430);
+  };
   
   textSize(30);
-  stroke(255,255,255); fill(255,255,255);strokeWeight(10);
-  if (wallsieged == 1 && siegetime == 1) {stroke(255,155,0);fill(255,155,0);};
-  if (wallhp[1] < 40) {stroke(255,0,0);fill(255,0,0);};
-  if (wallhp[1] > 0) {line(100,400,400,500);};
-  text(wallhp[1],200,500);
-  textSize(15);
-  text("Armory",250,420);
+  fill(255,255,0);
+  rotate(0.6);
+  text(wallhp[1] + " HP",420,360);
+  rotate(-0.6);
+  stroke(240,240,240); fill(255,255,255);strokeWeight(10);
+  if (wallsieged == 1 && siegetime == 1) {stroke(240,140,0);fill(255,155,0);};
+  if (wallhp[1] < 40) {stroke(240,0,0);fill(255,0,0);};
+  if (wallhp[1] > 0) {
+    line(50,380,430,640);
+    line(50,390,430,650);
+    line(50,400,430,660);
+    line(50,410,430,670);
+    line(50,420,430,680);
+    line(50,430,430,690);
+  };
   
   textSize(30);
-  stroke(255,255,255); fill(255,255,255);strokeWeight(10);
-  if (wallsieged == 2 && siegetime == 1) {stroke(255,155,0);fill(255,155,0);};
-  if (wallhp[2] < 40) {stroke(255,0,0);fill(255,0,0);};
-  if (wallhp[2] > 0) {line(400,500,600,300);};
-  text(wallhp[2],550,400);
-  textSize(15);
-  text("Clinic",420,400);
+  fill(255,255,0);
+  rotate(0.6);
+  text(wallhp[3] + " HP",490,-170);
+  rotate(-0.6);
+  stroke(225,225,225); fill(255,255,255);strokeWeight(10);
+  if (wallsieged == 3 && siegetime == 1) {stroke(225,125,0);fill(255,155,0);};
+  if (wallhp[3] < 40) {stroke(225,0,0);fill(255,0,0);};
+  if (wallhp[3] > 0) {
+    line(730,300,350,50);
+    line(730,310,350,60);
+    line(730,320,350,70);
+    line(730,330,350,80);
+    line(730,340,350,90);
+    line(730,350,350,100);
+  };
   
   textSize(30);
-  stroke(255,255,255); fill(255,255,255);strokeWeight(10);
-  if (wallsieged == 3 && siegetime == 1) {stroke(255,155,0);fill(255,155,0);};
-  if (wallhp[3] < 40) {stroke(255,0,0);fill(255,0,0);};
-  if (wallhp[3] > 0) {line(600,300,300,170);};
-  text(wallhp[3],450,215);
-  textSize(15);
-  text("Vault",400,255);
+  fill(255,255,0);
+  rotate(-0.87);
+  text(wallhp[2] + " HP",-50,810);
+  rotate(0.87);
+  stroke(240,240,240); fill(255,255,255);strokeWeight(10);
+  if (wallsieged == 2 && siegetime == 1) {stroke(240,140,0);fill(255,155,0);};
+  if (wallhp[2] < 40) {stroke(240,0,0);fill(255,0,0);};
+  if (wallhp[2] > 0) {
+    line(430,640,730,300);
+    line(430,650,730,310);
+    line(430,660,730,320);
+    line(430,670,730,330);
+    line(430,680,730,340);
+    line(430,690,730,350);
+  };
   textSize(30);
   
   fill(255,255,255);
@@ -119,32 +151,38 @@ void draw(){
   fill(255,255,0);
   if (raidtime <= 0 && raider > 0 && raider <= food && siegetime == 0) {text("Raid",580,80)};
   
+  textSize(27);
   fill(255,255,255);
-  text("$" + money,10,790);
+  text("Vault",430,255);
+  text("$" + money,420,285);
   
   fill(255,255,0);
-  text("Weaponry",180,760);
+  text("Armoury",220,445);
   fill(255,255,255);
   if (raidtime <= 0) {
     if (raider > weapon) {fill(255,155,0)};
     if (weapon == 0) {fill(255,0,0)};
-    text(weapon + "/15",210,790);
+    if (weapon < 10) {text(weapon + "/15",235,470);};
+    if (weapon >= 10) {text(weapon + "/15",230,470);};
   } else {
     text("?/15",210,790);
   };
   
   fill(255,255,0);
-  text("Food",420,760);
+  text("Food",230,285);
   fill(255,255,255);
   if (raider > food || housing + raider > food) {fill(255,155,0)};
   if (food == 0) {fill(255,0,0)};
-  text(food + "/90",410,790);
+  if (food < 10) {text(food + "/90",229,310);};
+  if (food >= 10) {text(food + "/90",224,310);};
+  
   
   fill(255,255,0);
-  text("Medikits",590,760);
+  text("Medikits",460,430);
   fill(255,255,255);
   if (medikit == 0) {fill(255,0,0)};
-  text(medikit + "/20",610,790);
+  if (medikit < 10) {text(medikit + "/20",490,455);};
+  if (medikit >= 10) {text(medikit + "/20",480,455);};
   fill(255,255,255);
   
   if ((random(1) > 0.997) && medikit >= 2 && housing > 0) {
@@ -259,42 +297,42 @@ void draw(){
     newsview -= 1;
     textSize(30);
     fill(0,255,0);
-    if (news == 3) {text("Raider team found survivor.",10,650)};
-    if (news == 4) {text("Raider team found food.",10,650)};
-    if (news == 5) {text("Raider team found weaponry.",10,650)};
+    if (news == 3) {text("Raider team found survivor.",10,760)};
+    if (news == 4) {text("Raider team found food.",10,760)};
+    if (news == 5) {text("Raider team found weaponry.",10,760)};
   
     fill(255,155,0);
-    if (news == 1) {text("Raider team injured. Wounds taken care of.",10,650)};
-    if (news == 6) {text("A weapon malfunctioned.",10,650)};
-    if (news == 10) {text("The bunker is under siege!",10,650)};
+    if (news == 1) {text("Raider team injured. Wounds taken care of.",10,760)};
+    if (news == 6) {text("A weapon malfunctioned.",10,760)};
+    if (news == 10) {text("The bunker is under siege!",10,760)};
     
     fill(255,0,0);
-    if (news == 2) {text("A raider was shot by a sniper.",10,650)};
-    if (news == 9) {text("People died of famine.",10,650)};
-    if (news == 12) {text("Some raiders were blown up.",10,650)};
+    if (news == 2) {text("A raider was shot by a sniper.",10,760)};
+    if (news == 9) {text("People died of famine.",10,760)};
+    if (news == 12) {text("Some raiders were blown up.",10,760)};
   
     fill(255,255,255);
-    if (news == 11) {text("The siege has ended.",10,650)};
-    if (news == 7) {text("Taken in and healed an injured person.",10,650)};
+    if (news == 11) {text("The siege has ended.",10,760)};
+    if (news == 7) {text("Taken in and healed an injured person.",10,760)};
   };
   
   if (talkview > 0) {
     talkview -= 1;
-    textSize(15);
+    textSize(20);
     fill(0,255,0);
-    if (talk == 1) {text("We have more people than them, stop the siege!",10,680)};
-    if (talk == 4) {text("Go and never come back, losers!",10,680)};
+    if (talk == 1) {text("We have more people than them, stop the siege!",10,790)};
+    if (talk == 4) {text("Go and never come back, losers!",10,790)};
   
     fill(255,155,0);
-    if (talk == 2) {text("Just a few more weapons and we can defeat them!",10,680)};
-    if (talk == 5) {text("The raiders are under attack!",10,680)};
+    if (talk == 2) {text("Just a few more weapons and we can defeat them!",10,790)};
+    if (talk == 5) {text("The raiders are under attack!",10,790)};
   
     fill(255,0,0);
-    if (talk == 6) {text("We need backup!",10,680)};
+    if (talk == 6) {text("We need backup!",10,790)};
   
     fill(255,255,255);
-    if (talk == 3) {text("Finally, they had gone away!",10,680)};
-    if (talk == 7) {text("The attack on the raiders had stopped.",10,680)};
+    if (talk == 3) {text("Finally, they had gone away!",10,790)};
+    if (talk == 7) {text("The attack on the raiders had stopped.",10,790)};
   
     textSize(30);
   };
@@ -431,19 +469,19 @@ void draw(){
   stroke(8,11,0);
   strokeWeight(50);
   line(800,0,800,799);
-  line(800,700,1420,700);
+  line(800,540,1420,540);
   fill(255);
   
   if (housing <= 0 && raider <= 0) {
-    text("LEVEL " + ((round(raidcount*2)) + (round(housing/2)) + (round(money/1000))+ daypassed + (siegecount*2)) + " FAILURE. REFRESH PAGE",820,710);
+    text("LEVEL " + ((round(raidcount*2)) + (round(housing/2)) + (round(money/1000))+ daypassed + (siegecount*2)) + " FAILURE. REFRESH PAGE",820,550);
   } else {
-    text("LEVEL " + ((round(raidcount*2)) + (round(housing/2)) + (round(money/1000))+ daypassed + (siegecount*2)) + " FACTION",820,710);
+    text("LEVEL " + ((round(raidcount*2)) + (round(housing/2)) + (round(money/1000))+ daypassed + (siegecount*2)) + " FACTION",820,550);
   };
   
   textSize(70);
   text("FACTION MASTER",830,780);
   
-  if (siegetime == 1 || dist(1115,650,mouseX,mouseY) < 80) {
+  if (siegetime == 1 || dist(1115,493,mouseX,mouseY) < 80) {
     textSize(30);
     text("Bunker Under Siege!",850,30);
     textSize(17);
@@ -457,33 +495,28 @@ void draw(){
     text("The enemies will try to smash through your bunker's walls!",850,170);
     textSize(14);
     text("Click on them to repair them to a maximum of 150HP.",850,190);
+    textSize(14);
+    text("If the walls break your resources will be looted!",850,210);
     
     textSize(20);
-    text("Kitchen, Vault, Clinic, Armory",850,250);
+    text("Defending The Bunker",850,270);
     textSize(14);
-    text("Your four resources are stored in these containers. When the",850,270);
+    text("The people in the bunker will engage in combat when they have an",850,290);
     textSize(14);
-    text("enemies breach the walls they will start looting the containers.",850,290);
+    text("advantage. Your raiders must have enough weapons, and when you",850,310);
+    textSize(14);
+    text("have more people and raiders on your side, the firefight will",850,330);
+    textSize(14);
+    text("begin! A few medikits will be handy.",850,350);
     
     textSize(20);
-    text("Defending The Bunker",850,350);
+    text("Ending The Siege",850,410);
     textSize(14);
-    text("The people in the bunker will engage in combat when they have an",850,370);
-    textSize(14);
-    text("advantage. Your raiders must have enough weapons, and when you",850,390);
-    textSize(14);
-    text("have more people and raiders on your side, the firefight will",850,410);
-    textSize(14);
-    text("begin! A few medikits will be handy.",850,430);
-    
-    textSize(20);
-    text("Ending The Siege",850,490);
-    textSize(14);
-    text("Kill all enemies or wait for them to tire out.",850,510);
+    text("Kill all enemies or wait for them to tire out.",850,430);
     
     fill(155);
     textSize(26);
-    text(" -----------> About Sieges <-----------",810,650);
+    text(" -----------> About Sieges <-----------",810,500);
     fill(255);
   };
   
@@ -523,9 +556,12 @@ void draw(){
     text("increases the loot you get, but more people will want to siege",850,450);
     textSize(14);
     text("your bunker for revenge!",850,470);
+    
+    textSize(26);
+    text(" -----------> About Sieges <-----------",810,500);
   };
   
-  if (siegetime == 0 && dist(610,80,mouseX,mouseY) > 30 && dist(1115,650,mouseX,mouseY) > 80) {
+  if (siegetime == 0 && dist(610,80,mouseX,mouseY) > 30 && dist(1115,493,mouseX,mouseY) > 80) {
     textSize(30);
     text("Basics",850,30);
     textSize(17);
@@ -559,7 +595,7 @@ void draw(){
     text("they are under attack.",850,430);
     
     textSize(26);
-    text(" -----------> About Sieges <-----------",810,650);
+    text(" -----------> About Sieges <-----------",810,500);
   };
   textSize(30);
   
@@ -567,6 +603,7 @@ void draw(){
   strokeWeight(10);
   if (dist(610,80,mouseX,mouseY) < 30 || dist(460,775,mouseX,mouseY) < 80 || dist(260,775,mouseX,mouseY) < 80 || dist(660,775,mouseX,mouseY) < 80 || dist(435,32,mouseX,mouseY) < 15 || (475,32,mouseX,mouseY) < 15 || dist(135,300,mouseX,mouseY) < 30 || dist(225,515,mouseX,mouseY) < 30 || dist(575,415,mouseX,mouseY) < 30 || dist(475,230,mouseX,mouseY) < 30) {stroke(255,255,0);strokeWeight(15);};
   line(mouseX,mouseY,mouseX,mouseY);
+  text(mouseX + ", " + mouseY, mouseX,mouseY);
   stroke(255,255,255);
   strokeWeight(10);
 }
@@ -579,7 +616,7 @@ void mouseClicked() {
     food -= raider;
   };
   
-  if (dist(460,775,mouseX,mouseY) < 80 && money >= 100 && food <= 90) {
+  if (dist(261,279,mouseX,mouseY) < 30 && money >= 100 && food <= 90) {
     food += 3;
     money -= 100;
     if (food > 90) {
@@ -587,7 +624,7 @@ void mouseClicked() {
     };
   };
   
-  if (dist(260,775,mouseX,mouseY) < 80 && money >= 300 && weapon <= 15 && raidtime <= 0) {
+  if (dist(276,439,mouseX,mouseY) < 50 && money >= 300 && weapon <= 15 && raidtime <= 0) {
     weapon += 2;
     money -= 300;
     if (weapon > 15) {
@@ -595,7 +632,7 @@ void mouseClicked() {
     };
   };
   
-  if (dist(660,775,mouseX,mouseY) < 80 && money >= 300 && medikit <= 20) {
+  if (dist(527,421,mouseX,mouseY) < 60 && money >= 300 && medikit <= 20) {
     medikit += 4;
     money -= 300;
     if (medikit > 20) {
@@ -613,27 +650,27 @@ void mouseClicked() {
     raider -= 1;
   };
   
-  if (dist(135,300,mouseX,mouseY) < 30 && wallhp[0] < 150 && money > 60) {
+  if (dist(169,211,mouseX,mouseY) < 50 && wallhp[0] < 150 && money > 60) {
     wallhp[0] += 10;
     money -= 60;
     if (wallhp[0] > 150) {wallhp[0] = 150;};
   };
   
-  if (dist(225,515,mouseX,mouseY) < 30 && wallhp[1] < 150 && money > 60) {
-    wallhp[1] += 10;
+  if (dist(548,158,mouseX,mouseY) < 50 && wallhp[3] < 150 && money > 60) {
+    wallhp[3] += 10;
     money -= 60;
-    if (wallhp[1] > 150) {wallhp[1] = 150;};
+    if (wallhp[3] > 150) {wallhp[3] = 150;};
   };
   
-  if (dist(575,415,mouseX,mouseY) < 30 && wallhp[2] < 150 && money > 60) {
+  if (dist(613,515,mouseX,mouseY) < 50 && wallhp[2] < 150 && money > 60) {
     wallhp[2] += 10;
     money -= 60;
     if (wallhp[2] > 150) {wallhp[2] = 150;};
   };
   
-  if (dist(475,230,mouseX,mouseY) < 30 && wallhp[3] < 150 && money > 60) {
-    wallhp[3] += 10;
+  if (dist(191,555,mouseX,mouseY) < 50 && wallhp[1] < 150 && money > 60) {
+    wallhp[1] += 10;
     money -= 60;
-    if (wallhp[3] > 150) {wallhp[3] = 150;};
+    if (wallhp[1] > 150) {wallhp[1] = 150;};
   };
 };
